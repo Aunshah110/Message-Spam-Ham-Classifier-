@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SMS Spam Classifier</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="container">
+
+            <!-- Header -->
+
+            <div class="header">
+
+                <div class="badge">
+                    <span class="status-dot"></span>
+                    AI MESSAGE ANALYZER
+                </div>
+
+                <h1>
+                    SMS Spam
+                    <span>Classifier</span>
+                </h1>
+
+                <p class="subtitle">
+                    Detect unwanted messages instantly
+                    using machine learning.
+                </p>
+
+            </div>
+
+
+            <!-- Input Card -->
+
+            <div class="input-card">
+
+                <div class="input-header">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <span id="characterCount">
+                        0 / 500
+                    </span>
+
+                </div>
+
+                <textarea
+                    id="message"
+                    maxlength="500"
+                    placeholder="Type or paste your SMS message here..."
+                    spellcheck="true"
+                ></textarea>
+
+                <div class="input-footer">
+
+                    <span class="hint">
+                        Enter a message to analyze
+                    </span>
+
+                    <button
+                        id="checkButton"
+                        type="button"
+                    >
+                        <span class="button-text">
+                            Check Message
+                        </span>
+
+                        <span class="button-icon">
+                            →
+                        </span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Loading -->
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p>
+                    Analyzing message
+                    <span class="loading-dots"></span>
+                </p>
+
+            </div>
+
+
+            <!-- Prediction -->
+
+            <div
+                id="resultCard"
+                class="result-card hidden"
+            >
+
+                <div class="result-top">
+
+                    <div>
+                        <p class="result-label">
+                            PREDICTION
+                        </p>
+
+                        <h2 id="prediction">
+                            —
+                        </h2>
+                    </div>
+
+                    <div
+                        id="resultIcon"
+                        class="result-icon"
+                    >
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="result-message">
+
+                    <span>
+                        Analyzed message
+                    </span>
+
+                    <p id="resultMessage">
+                        —
+                    </p>
+
+                </div>
+
+
+                <div class="score-section">
+
+                    <div class="score-header">
+
+                        <span>
+                            Decision Score
+                        </span>
+
+                        <strong id="score">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <div class="score-bar">
+
+                        <div
+                            id="scoreProgress"
+                            class="score-progress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+
+            <footer>
+                Powered by SharpenAI
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

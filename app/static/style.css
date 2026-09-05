@@ -1,0 +1,703 @@
+:root {
+    --royal-900: #070b1c;
+    --royal-800: #0b1028;
+    --royal-700: #10183a;
+
+    --accent: #7188ff;
+    --accent-light: #9caaff;
+
+    --text-primary: #f7f8ff;
+    --text-secondary: #aeb5ce;
+    --text-muted: #737b96;
+
+    --glass: rgba(255, 255, 255, 0.075);
+    --glass-border: rgba(255, 255, 255, 0.13);
+
+    --success: #5ee6a8;
+    --danger: #ff7189;
+
+    --radius: 24px;
+}
+
+
+/* --------------------------------------------------
+   Reset
+-------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--text-primary);
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(79, 99, 210, 0.22),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(91, 70, 180, 0.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--royal-900),
+            var(--royal-800),
+            var(--royal-700)
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* --------------------------------------------------
+   Page
+-------------------------------------------------- */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 720px;
+}
+
+
+/* --------------------------------------------------
+   Header
+-------------------------------------------------- */
+
+.header {
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+
+.badge {
+    width: fit-content;
+
+    margin: 0 auto 20px;
+
+    padding: 8px 14px;
+
+    border: 1px solid var(--glass-border);
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.status-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow: 0 0 12px rgba(94, 230, 168, 0.7);
+}
+
+
+h1 {
+    font-size: clamp(42px, 7vw, 68px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+
+h1 span {
+    display: block;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff,
+        var(--accent-light)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.subtitle {
+    margin-top: 18px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* --------------------------------------------------
+   Input Card
+-------------------------------------------------- */
+
+.input-card {
+    padding: 24px;
+
+    border: 1px solid var(--glass-border);
+
+    border-radius: var(--radius);
+
+    background: rgba(255, 255, 255, 0.055);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
+
+.input-header,
+.input-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.input-header {
+    margin-bottom: 13px;
+}
+
+
+.input-header label {
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+#characterCount {
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+textarea {
+    width: 100%;
+
+    min-height: 170px;
+
+    resize: vertical;
+
+    padding: 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 16px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.16);
+
+    color: var(--text-primary);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+textarea::placeholder {
+    color: #646c87;
+}
+
+
+textarea:focus {
+    border-color: rgba(113, 136, 255, 0.65);
+
+    box-shadow:
+        0 0 0 4px rgba(113, 136, 255, 0.08);
+}
+
+
+.input-footer {
+    margin-top: 18px;
+}
+
+
+.hint {
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* --------------------------------------------------
+   Button
+-------------------------------------------------- */
+
+button {
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+
+#checkButton {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 17px;
+
+    border-radius: 13px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #637bff,
+        #4f62d6
+    );
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(76, 94, 210, 0.28);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+#checkButton:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 16px 35px rgba(76, 94, 210, 0.40);
+}
+
+
+#checkButton:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+
+.button-icon {
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+#checkButton:hover .button-icon {
+    transform: translateX(4px);
+}
+
+
+/* --------------------------------------------------
+   Loading
+-------------------------------------------------- */
+
+.loading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-top: 26px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+
+.loader {
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.loader span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--accent-light);
+
+    animation: pulse 0.9s infinite ease-in-out;
+}
+
+
+.loader span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+
+.loader span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.loading-dots::after {
+    content: "";
+
+    animation: dots 1.4s infinite;
+}
+
+
+@keyframes dots {
+
+    0% {
+        content: "";
+    }
+
+    33% {
+        content: ".";
+    }
+
+    66% {
+        content: "..";
+    }
+
+    100% {
+        content: "...";
+    }
+}
+
+
+/* --------------------------------------------------
+   Glass Prediction Card
+-------------------------------------------------- */
+
+.result-card {
+    margin-top: 28px;
+
+    padding: 26px;
+
+    border-radius: 26px;
+
+    border: 1px solid rgba(255, 255, 255, 0.17);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.13),
+            rgba(255, 255, 255, 0.045)
+        );
+
+    backdrop-filter: blur(32px) saturate(150%);
+    -webkit-backdrop-filter: blur(32px) saturate(150%);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.13);
+
+    animation: resultAppear 0.5s ease forwards;
+}
+
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.result-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.result-label {
+    margin-bottom: 7px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+
+#prediction {
+    font-size: 29px;
+
+    letter-spacing: -1px;
+}
+
+
+.result-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    background: rgba(94, 230, 168, 0.13);
+
+    color: var(--success);
+
+    border: 1px solid rgba(94, 230, 168, 0.22);
+}
+
+
+.divider {
+    height: 1px;
+
+    margin: 22px 0;
+
+    background: rgba(255, 255, 255, 0.09);
+}
+
+
+.result-message > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+#resultMessage {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+
+.score-section {
+    margin-top: 22px;
+}
+
+
+.score-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+
+.score-header strong {
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+.score-bar {
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.score-progress {
+    height: 100%;
+
+    width: 0;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #596fdc,
+        #9caaff
+    );
+
+    transition: width 0.8s ease;
+}
+
+
+/* --------------------------------------------------
+   Utility
+-------------------------------------------------- */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* --------------------------------------------------
+   Footer
+-------------------------------------------------- */
+
+footer {
+    margin-top: 28px;
+
+    text-align: center;
+
+    color: #59617b;
+
+    font-size: 11px;
+}
+
+
+/* --------------------------------------------------
+   Responsive
+-------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 40px 15px;
+    }
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .input-card {
+        padding: 18px;
+    }
+
+    textarea {
+        min-height: 150px;
+    }
+
+    .input-footer {
+        align-items: flex-end;
+
+        gap: 15px;
+    }
+
+    .hint {
+        max-width: 150px;
+    }
+
+    #checkButton {
+        flex-shrink: 0;
+    }
+
+    .result-card {
+        padding: 22px;
+    }
+}
