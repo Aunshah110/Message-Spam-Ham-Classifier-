@@ -96,4 +96,6 @@ http://127.0.0.1:8000
 
 4. Enter an SMS message and click **Check Message** to see whether it is classified as **SPAM** or **NOT SPAM**.
 
+URL = 'https://message-spam-ham-classifier.vercel.app/'
+
 > *Note: The reported accuracy is based on the held-out test set. Manually testing individual messages is useful for checking system behavior but is not an official accuracy measurement.
